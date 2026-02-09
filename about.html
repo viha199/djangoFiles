@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
     <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="join.html">Join Us</a>
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/join/">Join Us</a>
     </div>
     <div class="content">
         <h1 class="contentText">About Me</h1>
@@ -26,6 +26,24 @@
         <li>Basic Javascript</li>
     </ul>
     </div>
-</body>
+    <h2>Joined Members</h2>
 
+    <table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+    </tr>
+
+    {% for m in members %}
+    <tr>
+        <td>{{ m.0 }}</td>
+        <td>{{ m.1 }}</td>
+        <td>{{ m.2 }}</td>
+    </tr>
+    {% endfor %}
+
+    </table>
+
+</body>
 </html>
