@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Login</h1><br><br>
+        {% if messages %}
+        <div>
+            {% for msg in messages %}
+            {{ msg }}
+            {% endfor %}
+        </div>
+        {% endif %}
+        <form action="/login/" method="POST" class="contentText">
+            {% csrf_token %}
+            <label for="email">Email: </label>
+            <input type="email" name="email"><br><br>
+            <label for="password">Password: </label>
+            <input type="password" name="password"><br><br>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <p class="contentText">Don't have an account ?</p>
+        <a href="signup" class="contentText">Signup here</a><br><br>
+    </div>
+</body>
+</html>
